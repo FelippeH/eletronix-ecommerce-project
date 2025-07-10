@@ -1,12 +1,17 @@
-import { Button } from "@/components/ui/button";
+"use client";
 
-export default function Home() {
+import { Modal } from "@/components/ui/modal";
+
+const SetupPage = () => {
   return (
     <>
-      <p>Hello Admin Dashboard</p>
-      <div className="flex flex-wrap items-center gap-2 md:flex-row">
-        <Button>Button</Button>
+      <div className="p-4">
+        <Modal title="Teste" description="Teste00" isOpen onClose={() => {}}>
+          Children
+        </Modal>
       </div>
     </>
   );
-}
+};
+
+export default SetupPage;
