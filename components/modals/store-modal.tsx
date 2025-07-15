@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
-  name: z.string().min(1),
+  name: z.string().min(3),
 });
 
 export const StoreModal = () => {
