@@ -13,13 +13,19 @@ A aplicação permite que usuários naveguem por produtos, adicionem itens ao ca
 
 ## 🧰 Tecnologias e Ferramentas
 ### 🖥️ Front-end
-- [Next.js](https://nextjs.org/) – Framework React com renderização híbrida
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/) – Framework utilitário para estilização
-### 🖧 Back-end
-- MySQL – Banco de dados relacional
-### 💻 Outras ferramentas
+- [Next.js](https://nextjs.org/) - Framework React com renderização híbrida.
+- [React](https://reactjs.org/) -  Biblioteca JavaScript para construção de interfaces declarativas e componentes reutilizáveis.
+- [Tailwind CSS](https://tailwindcss.com/) - Framework de utilitários para estilização rápida e responsiva.
+- [Shadcn/ui](https://ui.shadcn.com/) - Conjunto de componentes personalizáveis, baseado em Tailwind CSS e Radix UI, usado para criar botões, modais, diálogos, entre outros elementos visuais.
+- [Zustand](https://zustand-demo.pmnd.rs/) - Utilizado para gerenciamento de estado dentro da aplicação.
+- [Zod](https://zod.dev/) - Utilizado para validação de dados e schemas com TypeScript.
+- [Clerk](https://clerk.com/) - Solução de autenticação moderna, usada para login, gerenciamento de sessão e proteção de rotas.
 
+### 🖧 Back-end
+- [Prisma ORM](https://www.prisma.io/) - ORM para comunicação com o banco de dados.
+- [Supabase (PostgreSQL)](https://supabase.com/) - Banco de dados relacional (PostgreSQL) hospedado e gerenciado, usado como fonte de dados principal no projeto.
+ 
+### 💻 Outras ferramentas
 - Git e GitHub para versionamento
 - VSCode como editor principal
 - Postman para testes de API
