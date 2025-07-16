@@ -16,13 +16,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+/* Schema de validação do formulário usando Zod */
 const formSchema = z.object({
   name: z.string().min(3),
 });
 
+/* Utiliza o hook useStoreModal para controlar a visibilidade do modal */
 export const StoreModal = () => {
   const storeModal = useStoreModal();
 
+  // Configura o formulário com validação Zod e valores padrão
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -30,11 +33,14 @@ export const StoreModal = () => {
     },
   });
 
+  /* Função para lidar com o envio do formulário */
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     console.log(values);
   };
 
   return (
+    /* Modal para criar uma nova loja */
+    /* Exibe o modal se storeModal.isOpen for true */
     <Modal
       title="Criar loja"
       description="Adicionar uma nova loja para gerenciar produtos e categorias"
@@ -65,6 +71,7 @@ export const StoreModal = () => {
                 justify-end
                 w-full"
               >
+                {/* Botões do modal */}
                 <Button variant="outline" onClick={storeModal.onClose}>
                   Cancelar
                 </Button>
