@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Notify } from "@/components/Modals/toastify-provider";
 import { ModalProvider } from "@/providers/modal-provider";
-import { Inter } from "next/font/google";
+import Header from "@/components/Header";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+/* Importa fontes para uso global */
+const montserrat = Montserrat({
   subsets: ["latin"],
-}); /* Importa a fonte Inter para uso global */
+});
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",
@@ -23,7 +26,9 @@ export default function RootLayout({
     /* Envolve a aplicação com o ClerkProvider para autenticação */
     <ClerkProvider>
       <html lang="pt">
-        <body className={inter.className}>
+        <body className={montserrat.className}>
+          <Header />
+          <Notify />
           <ModalProvider />
           {children}
         </body>
