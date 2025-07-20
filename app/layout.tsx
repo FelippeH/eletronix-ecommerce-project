@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ModalProvider } from "@/providers/modal-provider";
+import { Toastify } from "@/app/providers/toastify";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -24,6 +25,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="pt">
         <body className={inter.className}>
+          <Toastify />
           <ModalProvider />
           {children}
         </body>
