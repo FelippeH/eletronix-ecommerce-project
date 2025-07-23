@@ -17,7 +17,7 @@ const SetupPage = () => {
   }, [isOpen, onOpen]);
 
   /* Renderiza a página de configuração */
-  return <div className="p-4">Root Page</div>;
+  return null;
 };
 
 export default SetupPage;
