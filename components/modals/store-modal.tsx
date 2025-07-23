@@ -45,7 +45,7 @@ export const StoreModal = () => {
 
       // ao clicar no botão 'criar loja' o axios cria um requisição http 'POST' e envia o nome e id da loja para o BD.
       const response = await axios.post("/api/stores", values);
-      console.log(response);
+      window.location.assign(`/${response.data.id}`);
       toast.success("Loja criada com sucesso");
     } catch {
       toast.error("Erro ao criar a loja");
