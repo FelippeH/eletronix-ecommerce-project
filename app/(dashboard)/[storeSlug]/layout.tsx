@@ -8,10 +8,11 @@ export default async function DashboardLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { storeId: string };
+  params: { storeSlug: string };
 }) {
   // autenticação com clerk
   // usa o auth para verificar se o usuário está logado
+  //try {
   const { userId } = await auth();
 
   // se o usuário não estiver logado, ele é redirecionado para a página de login
@@ -19,17 +20,17 @@ export default async function DashboardLayout({
     redirect("/login");
   }
 
-  const { storeId } = await params;
+  const { storeSlug } = await params;
   const store = await prismadb.store.findFirst({
     where: {
-      id: storeId,
+      slug: storeSlug,
       userId,
     },
   });
 
   // usa o auth para verificar se a loja existe
   if (!store) {
-    redirect("/");
+    return <div>Loja não encontrada.</div>;
   }
 
   return (
@@ -39,3 +40,8 @@ export default async function DashboardLayout({
     </>
   );
 }
+//} catch (err: any) {
+//    console.error("Erro no DashboardLayout:", err);
+//    redirect("/login");
+//  }
+//};
