@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import prismadb from "@/lib/prismadb";
+import slugify from "slugify";
 
 export async function POST(req: Request) {
   try {
@@ -16,13 +17,24 @@ export async function POST(req: Request) {
       return new NextResponse("Nome é obrigatório", { status: 400 });
     }
 
+    // uso do slug para simplificar a url da página
+    const baseSlug = slugify(name, { lower: true, strict: true });
+
+    // verifica se já existe a loja com o mesmo slug
+    let slug = baseSlug;
+    let count = 1;
+
+    while (await prismadb.store.findUnique({ where: { slug } })) {
+      slug = `${baseSlug}-${count++}`;
+    }
+
     const store = await prismadb.store.create({
       data: {
         name,
+        slug,
         userId,
       },
     });
-
     return NextResponse.json(store);
   } catch (error) {
     console.log("[STORE_POST]", error);
