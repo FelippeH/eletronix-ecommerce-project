@@ -1,10 +1,11 @@
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
+import { MainNav } from "./main-nav";
 
 // criação da navbar para o dashboard de admin
 const Navbar = () => {
   return (
-    <div className="border-b">
+    <div>
       <div className="bg-gray-200 flex h-24 items-center pl-10">
         <div>
           <Image
@@ -14,9 +15,9 @@ const Navbar = () => {
             height={200}
           />
         </div>
-        <div>...</div>
+        <MainNav />
         <div className="fixed top-auto right-10">
-          <UserButton />
+          <UserButton afterSignOutUrl="/" />
         </div>
       </div>
     </div>
