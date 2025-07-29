@@ -23,6 +23,7 @@ A aplicação permite que usuários naveguem por produtos, adicionem itens ao ca
 - [Zustand](https://zustand-demo.pmnd.rs/) - Utilizado para gerenciamento de estado dentro da aplicação.
 - [Zod](https://zod.dev/) - Biblioteca typescript-first para validação e tipagem de schemas com segurança em tempo de compilação.
 - [Clerk](https://clerk.com/) - Solução de autenticação moderna, usada para login, gerenciamento de sessão e proteção de rotas.
+- [Hot Toast](https://react-hot-toast.com/) - Hot Toast é utilizado para exibir notificações na tela.
 
 ### 🖧 Back-end
 
